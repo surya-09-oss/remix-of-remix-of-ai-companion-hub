@@ -13,7 +13,7 @@ const outDir = path.join(root, ".vercel", "output");
 process.env.VERCEL = process.env.VERCEL ?? "1";
 
 console.log("→ vite build");
-execSync("vite build", { stdio: "inherit", env: process.env });
+execSync("npx --no-install vite build", { stdio: "inherit", env: process.env });
 
 console.log("→ assembling .vercel/output");
 rmSync(outDir, { recursive: true, force: true });
