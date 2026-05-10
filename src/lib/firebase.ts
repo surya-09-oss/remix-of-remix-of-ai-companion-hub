@@ -18,5 +18,19 @@ export const auth = getAuth(app);
 export const db = getDatabase(app);
 export const googleProvider = new GoogleAuthProvider();
 
-// Admin UIDs — paste your Firebase UID here to access admin panel
+// ===== ADMIN ACCESS =====
+// Add admin emails here (easier than UIDs). Any user signing in with one of
+// these emails will get access to /admin.
+// Example: ["you@gmail.com", "admin@yourapp.com"]
+export const ADMIN_EMAILS: string[] = [];
+
+// Optional: you can also whitelist by Firebase UID
 export const ADMIN_UIDS: string[] = [];
+
+export function isAdmin(user: { email?: string | null; uid?: string } | null | undefined) {
+  if (!user) return false;
+  const email = (user.email ?? "").toLowerCase();
+  if (email && ADMIN_EMAILS.map((e) => e.toLowerCase()).includes(email)) return true;
+  if (user.uid && ADMIN_UIDS.includes(user.uid)) return true;
+  return false;
+}
