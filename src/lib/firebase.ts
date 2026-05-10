@@ -22,7 +22,7 @@ export const googleProvider = new GoogleAuthProvider();
 // Add admin emails here (easier than UIDs). Any user signing in with one of
 // these emails will get access to /admin.
 // Example: ["you@gmail.com", "admin@yourapp.com"]
-export const ADMIN_EMAILS: string[] = [];
+export const ADMIN_EMAILS: string[] = ["saritasinghsingh9752@gmail.com"];
 
 // Optional: you can also whitelist by Firebase UID
 export const ADMIN_UIDS: string[] = [];
