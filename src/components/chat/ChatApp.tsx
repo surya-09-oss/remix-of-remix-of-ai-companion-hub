@@ -310,12 +310,19 @@ export default function ChatApp() {
             </button>
             {tts.supported && supported && (
               <button
-                onClick={() => setVoiceMode(true)}
-                className="flex items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2 py-1 text-[11px] font-semibold text-primary transition hover:bg-primary/20 hover:shadow-[0_0_20px_-4px_var(--primary)] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-xs"
-                title="Voice call mode"
+                onClick={() =>
+                  toast.info("AI Voice-to-Voice Chat — Coming Soon 🎙️", {
+                    description: "We're working on real-time voice conversations. Stay tuned!",
+                  })
+                }
+                className="relative flex items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2 py-1 text-[11px] font-semibold text-primary transition hover:bg-primary/20 hover:shadow-[0_0_20px_-4px_var(--primary)] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-xs"
+                title="AI Voice-to-Voice Chat — Coming Soon"
               >
                 <Phone className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                 <span className="hidden sm:inline">Voice</span>
+                <span className="ml-1 rounded-full bg-accent/20 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-accent">
+                  Soon
+                </span>
               </button>
             )}
           </div>
